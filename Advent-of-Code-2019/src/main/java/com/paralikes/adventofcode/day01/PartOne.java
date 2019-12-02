@@ -14,7 +14,7 @@ public class PartOne implements Function<String, Integer> {
 	public Integer apply(String inputpath) {
 		Path inputfile = Paths.get(inputpath);
 		
-		try (Stream<String> inputlines = Files.lines(inputfile);) {
+		try (Stream<String> inputlines = Files.lines(inputfile)) {
 			return calculate(inputlines);
 		} catch (IOException e) {
 			throw new RuntimeException(e);
