@@ -7,7 +7,7 @@ import java.nio.file.Paths;
 import java.util.function.Function;
 import java.util.stream.Stream;
 
-public class PartOne implements Function<String, Integer> {
+class PartOne implements Function<String, Integer> {
 
 
 	@Override

@@ -1,6 +1,6 @@
 package com.paralikes.adventofcode.day01;
 
-public class PartTwo extends PartOne {
+class PartTwo extends PartOne {
 
 
 	@Override
