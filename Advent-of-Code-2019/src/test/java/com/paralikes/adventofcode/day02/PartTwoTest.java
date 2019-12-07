@@ -1,20 +1,31 @@
 package com.paralikes.adventofcode.day02;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
+import com.paralikes.adventofcode.ChallengeException;
+import com.paralikes.adventofcode.ChallengeTest;
+import com.paralikes.adventofcode.FileInput;
+import com.paralikes.adventofcode.IChallenge;
 
-import org.junit.jupiter.api.Test;
-
-class PartTwoTest {
+class PartTwoTest extends ChallengeTest<FileInput, Integer> {
 
 
-	@Test
-	void test() {
-		assertEquals(3376, new PartTwo().apply("./src/test/resources/Day02/input.txt"));
+	@Override
+	public IChallenge<FileInput, Integer> getChallenge() {
+		return new PartTwo();
 	}
-	
-	@Test
-	void result() {
-		System.out.println(new PartTwo().apply("./src/test/resources/Day02/input.txt"));
+
+	@Override
+	public FileInput getInput() {
+		return new FileInput("./src/test/resources/Day02/input.txt");
+	}
+
+	@Override
+	public Integer getOutput() {
+		return 3376;
+	}
+
+	@Override
+	public void testRequirements() throws ChallengeException {
+		// TODO Auto-generated method stub
 	}
 
 }

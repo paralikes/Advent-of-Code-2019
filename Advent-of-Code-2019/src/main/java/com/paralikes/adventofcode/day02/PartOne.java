@@ -8,17 +8,20 @@ import java.nio.file.Paths;
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Map;
-import java.util.function.Function;
 import java.util.stream.IntStream;
 
-class PartOne implements Function<String, Integer> {
+import com.paralikes.adventofcode.ChallengeException;
+import com.paralikes.adventofcode.FileInput;
+import com.paralikes.adventofcode.IChallenge;
+
+class PartOne implements IChallenge<FileInput, Integer> {
 
 
 	public static final int TERMINATE_OPCODE = 99;
 	
 	@Override
-	public Integer apply(String inputpath) {
-		Path inputfile = Paths.get(inputpath);
+	public Integer solve(FileInput input) throws ChallengeException {
+		Path inputfile = Paths.get(input.getPath());
 
 		try {
 			String contents = new String(Files.readAllBytes(inputfile), StandardCharsets.UTF_8);
@@ -30,6 +33,7 @@ class PartOne implements Function<String, Integer> {
 			throw new RuntimeException(e);
 		}
 	}
+	
 	
 	public int calculate(IntStream values, int positionOneValue, int positionTwoValue) {
 		int[] programMemory = values.toArray();
