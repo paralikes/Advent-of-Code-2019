@@ -4,29 +4,33 @@ import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
-import java.util.function.Function;
 import java.util.stream.Stream;
 
-class PartOne implements Function<String, Integer> {
+import com.paralikes.adventofcode.ChallengeException;
+import com.paralikes.adventofcode.FileInput;
+import com.paralikes.adventofcode.IChallenge;
+
+class PartOne implements IChallenge<FileInput, Integer> {
 
 
 	@Override
-	public Integer apply(String inputpath) {
-		Path inputfile = Paths.get(inputpath);
+	public Integer solve(FileInput input) throws ChallengeException {
+		Path inputfile = Paths.get(input.getPath());
 		
 		try (Stream<String> inputlines = Files.lines(inputfile)) {
 			return calculate(inputlines);
 		} catch (IOException e) {
-			throw new RuntimeException(e);
+			throw new ChallengeException(e);
 		}
 	}
+	
 	
 	public int calculate(Stream<String> inputlines) {
 		int fuelSum = inputlines
 				.mapToInt(Integer::valueOf)
 				.map(this::calculateFuel)
 				.sum();
-			
+		
 		return fuelSum;
 	}
 	
