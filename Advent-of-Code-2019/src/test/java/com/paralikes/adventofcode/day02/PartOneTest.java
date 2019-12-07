@@ -6,20 +6,19 @@ import java.util.Arrays;
 
 import com.paralikes.adventofcode.ChallengeException;
 import com.paralikes.adventofcode.ChallengeTest;
-import com.paralikes.adventofcode.FileInput;
 import com.paralikes.adventofcode.IChallenge;
 
-class PartOneTest extends ChallengeTest<FileInput, Integer> {
+class PartOneTest extends ChallengeTest<Input, Integer> {
 
 
 	@Override
-	public IChallenge<FileInput, Integer> getChallenge() {
+	public IChallenge<Input, Integer> getChallenge() {
 		return new PartOne();
 	}
 
 	@Override
-	public FileInput getInput() {
-		return new FileInput("./src/test/resources/Day02/input.txt");
+	public Input getInput() {
+		return new Input("./src/test/resources/Day02/input.txt", 12, 2);
 	}
 
 	@Override

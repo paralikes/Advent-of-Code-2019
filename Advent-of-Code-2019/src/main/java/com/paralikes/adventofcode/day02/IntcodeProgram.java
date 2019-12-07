@@ -2,7 +2,9 @@ package com.paralikes.adventofcode.day02;
 
 import java.util.Map;
 
-class IntcodeProgram implements Runnable {
+import com.paralikes.adventofcode.ChallengeException;
+
+class IntcodeProgram {
 
 
 	private final int[] memory;
@@ -16,8 +18,7 @@ class IntcodeProgram implements Runnable {
 	}
 	
 	
-	@Override
-	public void run() {
+	public void run() throws ChallengeException {
 		for(int instructionPointer = 0; instructionPointer < memory.length - 3; instructionPointer += 4) {
 			int opcode = memory[instructionPointer];
 			int firstInputAddress = memory[instructionPointer + 1];
@@ -33,7 +34,7 @@ class IntcodeProgram implements Runnable {
 			
 			OpCode code = intStructionSet.get(opcode);
 			if(code == null) {
-				throw new RuntimeException("No instruction for opcode: " + opcode);
+				throw new ChallengeException("No instruction for opcode: " + opcode);
 			}
 			
 			int result = code.run(firstInput, secondInput);

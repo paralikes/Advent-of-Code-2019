@@ -11,16 +11,15 @@ import java.util.Map;
 import java.util.stream.IntStream;
 
 import com.paralikes.adventofcode.ChallengeException;
-import com.paralikes.adventofcode.FileInput;
 import com.paralikes.adventofcode.IChallenge;
 
-class PartOne implements IChallenge<FileInput, Integer> {
+class PartOne implements IChallenge<Input, Integer> {
 
 
 	public static final int TERMINATE_OPCODE = 99;
 	
 	@Override
-	public Integer solve(FileInput input) throws ChallengeException {
+	public Integer solve(Input input) throws ChallengeException {
 		Path inputfile = Paths.get(input.getPath());
 
 		try {
@@ -28,17 +27,17 @@ class PartOne implements IChallenge<FileInput, Integer> {
 			String[] textValues = contents.trim().split(",");
 
 			IntStream values = Arrays.stream(textValues).mapToInt(Integer::parseInt);
-			return calculate(values, 12, 2);
+			return calculate(values, input.getNoun(), input.getVerb());
 		} catch (IOException e) {
-			throw new RuntimeException(e);
+			throw new ChallengeException(e);
 		}
 	}
 	
 	
-	public int calculate(IntStream values, int positionOneValue, int positionTwoValue) {
+	public int calculate(IntStream values, int noun, int verb) throws ChallengeException {
 		int[] programMemory = values.toArray();
-		programMemory[1] = positionOneValue;
-		programMemory[2] = positionTwoValue;
+		programMemory[1] = noun;
+		programMemory[2] = verb;
 
 		Map<Integer, OpCode> intStructionSet = new HashMap<>();
 		intStructionSet.put(1, (firstInput, secondInput) -> firstInput + secondInput);
