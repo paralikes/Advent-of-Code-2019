@@ -1,8 +1,10 @@
-package com.paralikes.adventofcode.day02;
+package com.paralikes.adventofcode.day02.v0;
 
 import com.paralikes.adventofcode.ChallengeException;
 import com.paralikes.adventofcode.ChallengeTest;
 import com.paralikes.adventofcode.IChallenge;
+import com.paralikes.adventofcode.day02.v0.Input;
+import com.paralikes.adventofcode.day02.v0.PartTwo;
 
 class PartTwoTest extends ChallengeTest<Input, Integer> {
 

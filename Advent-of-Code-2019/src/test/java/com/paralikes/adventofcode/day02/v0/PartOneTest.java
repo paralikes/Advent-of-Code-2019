@@ -1,4 +1,4 @@
-package com.paralikes.adventofcode.day02;
+package com.paralikes.adventofcode.day02.v0;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
@@ -7,6 +7,8 @@ import java.util.Arrays;
 import com.paralikes.adventofcode.ChallengeException;
 import com.paralikes.adventofcode.ChallengeTest;
 import com.paralikes.adventofcode.IChallenge;
+import com.paralikes.adventofcode.day02.v0.Input;
+import com.paralikes.adventofcode.day02.v0.PartOne;
 
 class PartOneTest extends ChallengeTest<Input, Integer> {
 

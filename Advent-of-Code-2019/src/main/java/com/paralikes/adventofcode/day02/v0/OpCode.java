@@ -1,4 +1,4 @@
-package com.paralikes.adventofcode.day02;
+package com.paralikes.adventofcode.day02.v0;
 
 interface OpCode {
 
