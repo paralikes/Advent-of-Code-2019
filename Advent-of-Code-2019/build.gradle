@@ -4,7 +4,7 @@ plugins {
 }
 
 repositories {
-    // Use jcenter for resolving dependencies.
+    // Use jcenter for resolving dependencies
     jcenter()
 }
 
@@ -21,4 +21,10 @@ dependencies {
 
 test {
     useJUnitPlatform()
+
+    
+    testLogging {
+        // Show output from standard out or error in Gradle output
+        showStandardStreams = true
+    }
 }

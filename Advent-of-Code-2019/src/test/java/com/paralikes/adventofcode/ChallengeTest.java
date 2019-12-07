@@ -34,7 +34,12 @@ public abstract class ChallengeTest<I, O> {
 	@Test
 	public void solveChallenge() throws ChallengeException {
 		O result = solve(getChallenge(), getInput());
-		System.out.println(String.format("The solution for %s is: %s", getClass().getSimpleName().replace("Test", ""), result));
+		
+		System.out.println(String.format(
+				"The solution for %s is: %s",
+				getClass().getName().replace(ChallengeTest.class.getPackage().getName() + ".", "").replace("Test", ""),
+				result
+		));
 	}
 	
 	@Test

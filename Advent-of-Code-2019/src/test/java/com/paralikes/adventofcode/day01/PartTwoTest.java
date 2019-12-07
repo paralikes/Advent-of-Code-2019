@@ -28,9 +28,11 @@ class PartTwoTest extends ChallengeTest<FileInput, Integer> {
 	
 	@Override
 	public void testRequirements() throws ChallengeException {
-		assertEquals(2, new PartTwo().calculateFuel(14));
-		assertEquals(966, new PartTwo().calculateFuel(1969));
-		assertEquals(50346, new PartTwo().calculateFuel(100756));
+		PartTwo challenge = new PartTwo();
+		
+		assertEquals(2, challenge.calculateFuel(14));
+		assertEquals(966, challenge.calculateFuel(1969));
+		assertEquals(50346, challenge.calculateFuel(100756));
 	}
 
 }

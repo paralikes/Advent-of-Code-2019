@@ -28,10 +28,12 @@ class PartOneTest extends ChallengeTest<FileInput, Integer> {
 	
 	@Override
 	public void testRequirements() throws ChallengeException {
-		assertEquals(2, new PartOne().calculateFuel(12));
-		assertEquals(2, new PartOne().calculateFuel(14));
-		assertEquals(654, new PartOne().calculateFuel(1969));
-		assertEquals(33583, new PartOne().calculateFuel(100756));
+		PartOne challenge = new PartOne();
+		
+		assertEquals(2, challenge.calculateFuel(12));
+		assertEquals(2, challenge.calculateFuel(14));
+		assertEquals(654, challenge.calculateFuel(1969));
+		assertEquals(33583, challenge.calculateFuel(100756));
 	}
 	
 }
